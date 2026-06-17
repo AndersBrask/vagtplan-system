@@ -6,10 +6,15 @@ import type { Employee, Area, Role, ConstraintConfig } from "./models";
 interface EmployeeRow {
   id: string;
   name: string;
+  birthdate: string | null;
   max_hours_per_week: number;
   max_hours_per_day: number;
+  min_hours_per_week: number;
+  employment_type: string | null;
   roles: string;
   availability: string;
+  preferences: string;
+  absences: string;
 }
 
 interface AreaRow {
@@ -34,10 +39,15 @@ function rowToEmployee(r: EmployeeRow): Employee {
   return {
     id: r.id,
     name: r.name,
+    birthdate: r.birthdate ?? null,
     max_hours_per_week: r.max_hours_per_week,
     max_hours_per_day: r.max_hours_per_day,
+    min_hours_per_week: r.min_hours_per_week ?? 0,
+    employment_type: r.employment_type ?? null,
     roles: parse<string[]>(r.roles, []),
     availability: parse(r.availability, []),
+    preferences: parse(r.preferences, []),
+    absences: parse(r.absences, []),
   };
 }
 
@@ -58,15 +68,20 @@ export async function createEmployee(db: D1Database, emp: Employee): Promise<Emp
   const e: Employee = { ...emp, id };
   await db
     .prepare(
-      "INSERT INTO employees (id, name, max_hours_per_week, max_hours_per_day, roles, availability) VALUES (?, ?, ?, ?, ?, ?)"
+      "INSERT INTO employees (id, name, birthdate, max_hours_per_week, max_hours_per_day, min_hours_per_week, employment_type, roles, availability, preferences, absences) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
     )
     .bind(
       e.id,
       e.name,
+      e.birthdate ?? null,
       e.max_hours_per_week,
       e.max_hours_per_day,
+      e.min_hours_per_week ?? 0,
+      e.employment_type ?? null,
       JSON.stringify(e.roles ?? []),
-      JSON.stringify(e.availability ?? [])
+      JSON.stringify(e.availability ?? []),
+      JSON.stringify(e.preferences ?? []),
+      JSON.stringify(e.absences ?? [])
     )
     .run();
   return e;
@@ -80,14 +95,19 @@ export async function updateEmployee(
   const e: Employee = { ...emp, id };
   const res = await db
     .prepare(
-      "UPDATE employees SET name = ?, max_hours_per_week = ?, max_hours_per_day = ?, roles = ?, availability = ? WHERE id = ?"
+      "UPDATE employees SET name = ?, birthdate = ?, max_hours_per_week = ?, max_hours_per_day = ?, min_hours_per_week = ?, employment_type = ?, roles = ?, availability = ?, preferences = ?, absences = ? WHERE id = ?"
     )
     .bind(
       e.name,
+      e.birthdate ?? null,
       e.max_hours_per_week,
       e.max_hours_per_day,
+      e.min_hours_per_week ?? 0,
+      e.employment_type ?? null,
       JSON.stringify(e.roles ?? []),
       JSON.stringify(e.availability ?? []),
+      JSON.stringify(e.preferences ?? []),
+      JSON.stringify(e.absences ?? []),
       id
     )
     .run();

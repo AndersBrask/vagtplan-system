@@ -1,0 +1,155 @@
+{
+  "employees": [
+    {
+      "id": "emp_1", "name": "Anna Berg", "roles": ["kasseansvarlig", "kasse"],
+      "birthdate": "1990-04-12", "max_hours_per_week": 37, "max_hours_per_day": 8,
+      "min_hours_per_week": 30, "employment_type": "fuldtid",
+      "availability": [
+        { "day": "monday", "start": "09:00", "end": "17:00" },
+        { "day": "tuesday", "start": "09:00", "end": "17:00" },
+        { "day": "wednesday", "start": "09:00", "end": "17:00" },
+        { "day": "thursday", "start": "09:00", "end": "17:00" },
+        { "day": "friday", "start": "09:00", "end": "17:00" }
+      ],
+      "preferences": [{ "day": "friday", "start": "09:00", "end": "13:00", "kind": "prefer", "weight": 2 }],
+      "absences": []
+    },
+    {
+      "id": "emp_2", "name": "Bo Dahl", "roles": ["lukkeansvarlig", "kasse"],
+      "birthdate": "1988-09-01", "max_hours_per_week": 37, "max_hours_per_day": 8,
+      "min_hours_per_week": 30, "employment_type": "fuldtid",
+      "availability": [
+        { "day": "monday", "start": "12:00", "end": "20:00" },
+        { "day": "tuesday", "start": "12:00", "end": "20:00" },
+        { "day": "wednesday", "start": "12:00", "end": "20:00" },
+        { "day": "thursday", "start": "12:00", "end": "20:00" },
+        { "day": "friday", "start": "12:00", "end": "20:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_3", "name": "Clara Eg", "roles": ["drivhus"],
+      "birthdate": "1995-02-20", "max_hours_per_week": 30, "max_hours_per_day": 8,
+      "min_hours_per_week": 20, "employment_type": "deltid",
+      "availability": [
+        { "day": "monday", "start": "09:00", "end": "16:00" },
+        { "day": "tuesday", "start": "09:00", "end": "16:00" },
+        { "day": "wednesday", "start": "09:00", "end": "16:00" },
+        { "day": "thursday", "start": "09:00", "end": "16:00" },
+        { "day": "friday", "start": "09:00", "end": "16:00" }
+      ],
+      "preferences": [], "absences": [{ "from": "2026-06-22", "to": "2026-06-28", "kind": "vacation", "note": "Ferie" }]
+    },
+    {
+      "id": "emp_4", "name": "David Friis", "roles": ["hal"],
+      "birthdate": "1999-11-05", "max_hours_per_week": 37, "max_hours_per_day": 8,
+      "min_hours_per_week": 30, "employment_type": "fuldtid",
+      "availability": [
+        { "day": "monday", "start": "09:00", "end": "18:00" },
+        { "day": "tuesday", "start": "09:00", "end": "18:00" },
+        { "day": "wednesday", "start": "09:00", "end": "18:00" },
+        { "day": "thursday", "start": "09:00", "end": "18:00" },
+        { "day": "saturday", "start": "09:00", "end": "18:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_5", "name": "Emma Holm", "roles": ["kasse"],
+      "birthdate": "2009-03-15", "max_hours_per_week": 12, "max_hours_per_day": 6,
+      "min_hours_per_week": 0, "employment_type": "ungarbejder",
+      "availability": [
+        { "day": "monday", "start": "15:00", "end": "20:00" },
+        { "day": "wednesday", "start": "15:00", "end": "20:00" },
+        { "day": "saturday", "start": "09:00", "end": "15:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_6", "name": "Frederik Lund", "roles": ["hal", "lager"],
+      "birthdate": "2008-08-22", "max_hours_per_week": 15, "max_hours_per_day": 7,
+      "min_hours_per_week": 0, "employment_type": "ungarbejder",
+      "availability": [
+        { "day": "monday", "start": "15:00", "end": "20:00" },
+        { "day": "wednesday", "start": "15:00", "end": "20:00" },
+        { "day": "friday", "start": "15:00", "end": "20:00" },
+        { "day": "saturday", "start": "09:00", "end": "18:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_7", "name": "Gitte Mark", "roles": ["kasseansvarlig", "lukkeansvarlig"],
+      "birthdate": "1985-07-30", "max_hours_per_week": 37, "max_hours_per_day": 8,
+      "min_hours_per_week": 30, "employment_type": "fuldtid",
+      "availability": [
+        { "day": "monday", "start": "11:00", "end": "20:00" },
+        { "day": "tuesday", "start": "11:00", "end": "20:00" },
+        { "day": "wednesday", "start": "11:00", "end": "20:00" },
+        { "day": "thursday", "start": "11:00", "end": "20:00" },
+        { "day": "friday", "start": "11:00", "end": "20:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_8", "name": "Hassan Nør", "roles": ["drivhus", "lager"],
+      "birthdate": "1992-12-12", "max_hours_per_week": 37, "max_hours_per_day": 8,
+      "min_hours_per_week": 30, "employment_type": "fuldtid",
+      "availability": [
+        { "day": "tuesday", "start": "09:00", "end": "18:00" },
+        { "day": "wednesday", "start": "09:00", "end": "18:00" },
+        { "day": "thursday", "start": "09:00", "end": "18:00" },
+        { "day": "friday", "start": "09:00", "end": "18:00" },
+        { "day": "saturday", "start": "09:00", "end": "18:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_9", "name": "Ida Pil", "roles": ["kasse"],
+      "birthdate": "2009-05-05", "max_hours_per_week": 12, "max_hours_per_day": 6,
+      "min_hours_per_week": 0, "employment_type": "ungarbejder",
+      "availability": [
+        { "day": "tuesday", "start": "15:00", "end": "20:00" },
+        { "day": "thursday", "start": "15:00", "end": "20:00" },
+        { "day": "sunday", "start": "10:00", "end": "16:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_10", "name": "Jens Roan", "roles": ["hal"],
+      "birthdate": "1997-01-19", "max_hours_per_week": 37, "max_hours_per_day": 8,
+      "min_hours_per_week": 30, "employment_type": "fuldtid",
+      "availability": [
+        { "day": "tuesday", "start": "09:00", "end": "18:00" },
+        { "day": "wednesday", "start": "09:00", "end": "18:00" },
+        { "day": "thursday", "start": "09:00", "end": "18:00" },
+        { "day": "friday", "start": "09:00", "end": "18:00" },
+        { "day": "saturday", "start": "09:00", "end": "18:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_11", "name": "Karen Storm", "roles": ["drivhus"],
+      "birthdate": "1980-10-10", "max_hours_per_week": 25, "max_hours_per_day": 8,
+      "min_hours_per_week": 15, "employment_type": "deltid",
+      "availability": [
+        { "day": "monday", "start": "09:00", "end": "16:00" },
+        { "day": "tuesday", "start": "09:00", "end": "16:00" },
+        { "day": "wednesday", "start": "09:00", "end": "16:00" },
+        { "day": "thursday", "start": "09:00", "end": "16:00" }
+      ],
+      "preferences": [], "absences": []
+    },
+    {
+      "id": "emp_12", "name": "Lars Vinter", "roles": ["lager", "hal"],
+      "birthdate": "2006-02-02", "max_hours_per_week": 30, "max_hours_per_day": 8,
+      "min_hours_per_week": 20, "employment_type": "deltid",
+      "availability": [
+        { "day": "monday", "start": "09:00", "end": "15:00" },
+        { "day": "tuesday", "start": "09:00", "end": "15:00" },
+        { "day": "wednesday", "start": "09:00", "end": "15:00" },
+        { "day": "thursday", "start": "09:00", "end": "15:00" },
+        { "day": "friday", "start": "09:00", "end": "15:00" }
+      ],
+      "preferences": [], "absences": []
+    }
+  ]
+}

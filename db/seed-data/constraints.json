@@ -1,0 +1,57 @@
+{
+  "constraints": [
+    {
+      "id": "kasse_bemanding",
+      "type": "staffing",
+      "area": "kasse",
+      "description": "Kasse: mindst 2, heraf mindst 1 over 18 og mindst 1 kasseansvarlig",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "time_from": "09:00",
+      "time_to": "20:00",
+      "min_total": 2,
+      "requirements": [
+        { "count": 1, "min_age": 18 },
+        { "count": 1, "role": "kasseansvarlig" }
+      ]
+    },
+    {
+      "id": "drivhus_dag",
+      "type": "staffing",
+      "area": "drivhus",
+      "description": "Drivhus: mindst 2 i dagtimerne",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "time_from": "09:00",
+      "time_to": "18:00",
+      "min_total": 2
+    },
+    {
+      "id": "drivhus_foer_luk",
+      "type": "staffing",
+      "area": "drivhus",
+      "description": "Drivhus: højst 1 de sidste 2 timer før luk",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "relative": { "anchor": "close", "from_offset_min": -120, "to_offset_min": 0 },
+      "max_total": 1
+    },
+    {
+      "id": "hal1_bemanding",
+      "type": "staffing",
+      "area": "hal_1",
+      "description": "Hal 1: mindst 2 hele dagen",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "time_from": "09:00",
+      "time_to": "20:00",
+      "min_total": 2
+    },
+    {
+      "id": "lager_formiddag",
+      "type": "staffing",
+      "area": "lager",
+      "description": "Lager: mindst 1 om formiddagen",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "time_from": "09:00",
+      "time_to": "15:00",
+      "min_total": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "roles": [
+    { "id": "kasse", "name": "Kasse" },
+    { "id": "kasseansvarlig", "name": "Kasseansvarlig" },
+    { "id": "drivhus", "name": "Drivhus" },
+    { "id": "hal", "name": "Hal" },
+    { "id": "lager", "name": "Lager" },
+    { "id": "lukkeansvarlig", "name": "Lukkeansvarlig" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "opening_hours": {
+    "monday": { "from": "09:00", "to": "20:00" },
+    "tuesday": { "from": "09:00", "to": "20:00" },
+    "wednesday": { "from": "09:00", "to": "20:00" },
+    "thursday": { "from": "09:00", "to": "20:00" },
+    "friday": { "from": "09:00", "to": "20:00" },
+    "saturday": { "from": "09:00", "to": "18:00" },
+    "sunday": { "from": "10:00", "to": "16:00" }
+  },
+  "time_slot_minutes": 60,
+  "defaults": { "max_hours_per_week": 37, "max_hours_per_day": 8 },
+  "planning": { "max_consecutive_days": 6, "min_rest_hours_between_days": 11 },
+  "closing": { "require_closing_responsible": true, "closing_role": "lukkeansvarlig" },
+  "weekend_days": ["saturday", "sunday"]
+}

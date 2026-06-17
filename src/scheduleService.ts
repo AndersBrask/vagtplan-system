@@ -57,6 +57,46 @@ function buildAutoConstraintsFromGlobalConfig(config: Record<string, any>): Cons
   return auto;
 }
 
+const WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+
+/** Alder på en given referencedato (ISO). null hvis fødselsdato mangler. */
+function ageOn(birthdate: string | null, refISO: string): number | null {
+  if (!birthdate) return null;
+  const b = new Date(birthdate + "T00:00:00Z");
+  const r = new Date(refISO + "T00:00:00Z");
+  let age = r.getUTCFullYear() - b.getUTCFullYear();
+  const m = r.getUTCMonth() - b.getUTCMonth();
+  if (m < 0 || (m === 0 && r.getUTCDate() < b.getUTCDate())) age--;
+  return age;
+}
+
+/** Dato (ISO) for en ugedag givet ugens mandag. */
+function dateForDay(weekStart: string, day: string): string {
+  const idx = WEEKDAYS.indexOf(day);
+  const d = new Date(weekStart + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + idx);
+  return d.toISOString().slice(0, 10);
+}
+
+function isAbsentOn(emp: Employee, dateISO: string): boolean {
+  return emp.absences?.some((a) => a.from <= dateISO && dateISO <= a.to) ?? false;
+}
+
+/**
+ * Forbered medarbejdere til motoren: beregn alder og fjern tilgængelighed
+ * på fraværsdage (kun når en konkret uge er angivet).
+ */
+function prepareEmployees(employees: Employee[], weekStart: string | null): Employee[] {
+  const refDate = weekStart ?? new Date().toISOString().slice(0, 10);
+  return employees.map((e) => {
+    const age = ageOn(e.birthdate ?? null, refDate);
+    const availability = weekStart
+      ? e.availability.filter((a) => !isAbsentOn(e, dateForDay(weekStart, a.day)))
+      : e.availability;
+    return { ...e, age, availability };
+  });
+}
+
 function buildSlots(
   openingHours: Record<string, { from?: string; to?: string }>,
   slotMinutes: number
@@ -75,14 +115,18 @@ function buildSlots(
  * Ren beregning (ingen DB) — gør motoren testbar mod Python-referencen.
  */
 export function computeSchedule(
-  allEmployees: Employee[],
+  rawEmployees: Employee[],
   areas: Area[],
   config: Record<string, any>,
   baseConstraints: ConstraintConfig[],
-  targetArea?: string | null
+  targetArea?: string | null,
+  weekStart?: string | null
 ): ScheduleResponse {
   const openingHours = config.opening_hours ?? {};
   const slotMinutes: number = config.time_slot_minutes ?? 60;
+
+  // Alder + fravær forberedes inden motoren kører.
+  const allEmployees = prepareEmployees(rawEmployees, weekStart ?? null);
 
   const autoConstraints = buildAutoConstraintsFromGlobalConfig(config);
   const allConstraintsCfg = [...baseConstraints, ...autoConstraints];
@@ -98,7 +142,7 @@ export function computeSchedule(
 
   if (areas.length === 0) {
     const slots = buildSlots(openingHours, slotMinutes);
-    const constraints = buildConstraintsFromConfig(allConstraintsCfg.filter(noArea));
+    const constraints = buildConstraintsFromConfig(allConstraintsCfg.filter(noArea), openingHours);
     const schedule = generateSchedule(allEmployees, slots, constraints, state);
     const violations = evaluateSchedule(schedule, allEmployees, slots, constraints);
     schedulesByArea["__global__"] = schedule;
@@ -110,7 +154,8 @@ export function computeSchedule(
       const employees = allEmployees.filter((e) => e.roles.some((r) => allowedRoles.has(r)));
       const slots = buildSlots(openingHours, slotMinutes);
       const constraints = buildConstraintsFromConfig(
-        allConstraintsCfg.filter((c) => c.area === area.id || noArea(c))
+        allConstraintsCfg.filter((c) => c.area === area.id || noArea(c)),
+        openingHours
       );
       const schedule = generateSchedule(employees, slots, constraints, state);
       const violations = evaluateSchedule(schedule, employees, slots, constraints);
@@ -130,7 +175,8 @@ export function computeSchedule(
 /** DB-wrapper: loader fra D1 og kalder computeSchedule. */
 export async function buildSchedule(
   db: D1Database,
-  targetArea?: string | null
+  targetArea?: string | null,
+  weekStart?: string | null
 ): Promise<ScheduleResponse> {
   const [allEmployees, areas, config, baseConstraints] = await Promise.all([
     getEmployees(db),
@@ -138,5 +184,5 @@ export async function buildSchedule(
     getConfig(db) as Promise<Record<string, any>>,
     getConstraints(db),
   ]);
-  return computeSchedule(allEmployees, areas, config, baseConstraints, targetArea);
+  return computeSchedule(allEmployees, areas, config, baseConstraints, targetArea, weekStart);
 }

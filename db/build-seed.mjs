@@ -1,11 +1,11 @@
-// Genererer db/seed.sql ud fra de oprindelige JSON-data i backend/data/.
+// Genererer db/seed.sql ud fra Billigblomst-data i db/seed-data/.
 // Kør: npm run seed:gen
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const dataDir = join(__dirname, "..", "backend", "data");
+const dataDir = join(__dirname, "seed-data");
 
 const read = (f) => JSON.parse(readFileSync(join(dataDir, f), "utf-8"));
 const q = (s) => "'" + String(s).replace(/'/g, "''") + "'"; // SQL-escape
@@ -26,11 +26,13 @@ lines.push("DELETE FROM constraints;");
 lines.push("DELETE FROM config;");
 lines.push("");
 
+const nullq = (v) => (v == null ? "NULL" : q(v));
 for (const e of employees) {
   lines.push(
-    `INSERT INTO employees (id, name, max_hours_per_week, max_hours_per_day, roles, availability) VALUES (` +
-      `${q(e.id)}, ${q(e.name)}, ${e.max_hours_per_week ?? 37}, ${e.max_hours_per_day ?? 8}, ` +
-      `${j(e.roles ?? [])}, ${j(e.availability ?? [])});`
+    `INSERT INTO employees (id, name, birthdate, max_hours_per_week, max_hours_per_day, min_hours_per_week, employment_type, roles, availability, preferences, absences) VALUES (` +
+      `${q(e.id)}, ${q(e.name)}, ${nullq(e.birthdate)}, ${e.max_hours_per_week ?? 37}, ${e.max_hours_per_day ?? 8}, ` +
+      `${e.min_hours_per_week ?? 0}, ${nullq(e.employment_type)}, ${j(e.roles ?? [])}, ${j(e.availability ?? [])}, ` +
+      `${j(e.preferences ?? [])}, ${j(e.absences ?? [])});`
   );
 }
 lines.push("");

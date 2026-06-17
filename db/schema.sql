@@ -5,10 +5,15 @@
 CREATE TABLE IF NOT EXISTS employees (
   id                 TEXT PRIMARY KEY,
   name               TEXT NOT NULL,
+  birthdate          TEXT,                          -- ISO YYYY-MM-DD (alders-krav)
   max_hours_per_week INTEGER NOT NULL DEFAULT 37,
   max_hours_per_day  INTEGER NOT NULL DEFAULT 8,
+  min_hours_per_week INTEGER NOT NULL DEFAULT 0,
+  employment_type    TEXT,
   roles              TEXT NOT NULL DEFAULT '[]',   -- JSON array of role ids
-  availability       TEXT NOT NULL DEFAULT '[]'    -- JSON array of {day,start,end}
+  availability       TEXT NOT NULL DEFAULT '[]',   -- JSON array of {day,start,end}
+  preferences        TEXT NOT NULL DEFAULT '[]',   -- JSON array of preferences
+  absences           TEXT NOT NULL DEFAULT '[]'    -- JSON array of absences
 );
 
 CREATE TABLE IF NOT EXISTS areas (

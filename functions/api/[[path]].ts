@@ -40,12 +40,14 @@ app.delete("/employees/:id", async (c) => {
 
 app.get("/schedule", async (c) => {
   const area = c.req.query("area") ?? null;
-  return c.json(await buildSchedule(c.env.DB, area));
+  const weekStart = c.req.query("week_start") ?? null;
+  return c.json(await buildSchedule(c.env.DB, area, weekStart));
 });
 
 app.post("/schedule/fix", async (c) => {
   // Placeholder — genererer bare en ny plan med samme motor.
-  return c.json(await buildSchedule(c.env.DB, null));
+  const weekStart = c.req.query("week_start") ?? null;
+  return c.json(await buildSchedule(c.env.DB, null, weekStart));
 });
 
 // --------- Områder ---------
