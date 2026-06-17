@@ -1,0 +1,285 @@
+{
+  "employees": [
+    {
+      "id": "emp_1",
+      "name": "Anna",
+      "roles": ["lukkeansvarlig", "kasse"],
+      "max_hours_per_week": 36,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "11:00", "end": "19:00" },
+        { "day": "tuesday", "start": "11:00", "end": "19:00" },
+        { "day": "wednesday", "start": "11:00", "end": "19:00" },
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "friday", "start": "11:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_2",
+      "name": "Bo",
+      "roles": ["lager"],
+      "max_hours_per_week": 32,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "07:00", "end": "15:00" },
+        { "day": "tuesday", "start": "07:00", "end": "15:00" },
+        { "day": "wednesday", "start": "07:00", "end": "15:00" },
+        { "day": "thursday", "start": "07:00", "end": "15:00" },
+        { "day": "friday", "start": "07:00", "end": "15:00" }
+      ]
+    },
+    {
+      "id": "emp_3",
+      "name": "Clara",
+      "roles": ["kasse", "have"],
+      "max_hours_per_week": 24,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "11:00", "end": "19:00" },
+        { "day": "tuesday", "start": "11:00", "end": "19:00" },
+        { "day": "wednesday", "start": "11:00", "end": "19:00" },
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "sunday", "start": "07:00", "end": "15:00" }
+      ]
+    },
+    {
+      "id": "emp_4",
+      "name": "David",
+      "roles": ["lukkeansvarlig", "lager"],
+      "max_hours_per_week": 36,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "11:00", "end": "19:00" },
+        { "day": "tuesday", "start": "11:00", "end": "19:00" },
+        { "day": "wednesday", "start": "11:00", "end": "19:00" },
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "friday", "start": "11:00", "end": "19:00" },
+        { "day": "saturday", "start": "07:00", "end": "15:00" }
+      ]
+    },
+    {
+      "id": "emp_5",
+      "name": "Erik",
+      "roles": ["lager"],
+      "max_hours_per_week": 20,
+      "max_hours_per_day": 6,
+      "availability": [
+        { "day": "monday", "start": "15:00", "end": "19:00" },
+        { "day": "tuesday", "start": "15:00", "end": "19:00" },
+        { "day": "wednesday", "start": "15:00", "end": "19:00" },
+        { "day": "thursday", "start": "15:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_6",
+      "name": "Freja",
+      "roles": ["kasse"],
+      "max_hours_per_week": 16,
+      "max_hours_per_day": 6,
+      "availability": [
+        { "day": "monday", "start": "15:00", "end": "19:00" },
+        { "day": "tuesday", "start": "15:00", "end": "19:00" },
+        { "day": "wednesday", "start": "15:00", "end": "19:00" },
+        { "day": "thursday", "start": "15:00", "end": "19:00" },
+        { "day": "sunday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_7",
+      "name": "Gustav",
+      "roles": ["have"],
+      "max_hours_per_week": 28,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "tuesday", "start": "07:00", "end": "15:00" },
+        { "day": "wednesday", "start": "07:00", "end": "15:00" },
+        { "day": "thursday", "start": "07:00", "end": "15:00" },
+        { "day": "friday", "start": "07:00", "end": "15:00" },
+        { "day": "saturday", "start": "07:00", "end": "15:00" }
+      ]
+    },
+    {
+      "id": "emp_8",
+      "name": "Helena",
+      "roles": ["kasse", "lager"],
+      "max_hours_per_week": 36,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "07:00", "end": "15:00" },
+        { "day": "tuesday", "start": "07:00", "end": "15:00" },
+        { "day": "wednesday", "start": "07:00", "end": "15:00" },
+        { "day": "thursday", "start": "07:00", "end": "15:00" },
+        { "day": "friday", "start": "07:00", "end": "15:00" },
+        { "day": "sunday", "start": "07:00", "end": "15:00" }
+      ]
+    },
+    {
+      "id": "emp_9",
+      "name": "Ida",
+      "roles": ["lukkeansvarlig", "kasse"],
+      "max_hours_per_week": 36,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "11:00", "end": "19:00" },
+        { "day": "tuesday", "start": "11:00", "end": "19:00" },
+        { "day": "wednesday", "start": "11:00", "end": "19:00" },
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "friday", "start": "11:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_10",
+      "name": "Jonas",
+      "roles": ["lager"],
+      "max_hours_per_week": 24,
+      "max_hours_per_day": 6,
+      "availability": [
+        { "day": "monday", "start": "15:00", "end": "19:00" },
+        { "day": "tuesday", "start": "15:00", "end": "19:00" },
+        { "day": "wednesday", "start": "15:00", "end": "19:00" },
+        { "day": "thursday", "start": "15:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_11",
+      "name": "Karina",
+      "roles": ["kasse"],
+      "max_hours_per_week": 24,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "07:00", "end": "15:00" },
+        { "day": "tuesday", "start": "07:00", "end": "15:00" },
+        { "day": "wednesday", "start": "07:00", "end": "15:00" },
+        { "day": "friday", "start": "07:00", "end": "15:00" },
+        { "day": "saturday", "start": "07:00", "end": "15:00" }
+      ]
+    },
+    {
+      "id": "emp_12",
+      "name": "Lars",
+      "roles": ["have", "lager"],
+      "max_hours_per_week": 32,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "07:00", "end": "15:00" },
+        { "day": "tuesday", "start": "07:00", "end": "15:00" },
+        { "day": "wednesday", "start": "07:00", "end": "15:00" },
+        { "day": "thursday", "start": "07:00", "end": "15:00" },
+        { "day": "friday", "start": "07:00", "end": "15:00" }
+      ]
+    },
+    {
+      "id": "emp_13",
+      "name": "Maja",
+      "roles": ["kasse", "lukkeansvarlig"],
+      "max_hours_per_week": 28,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "friday", "start": "11:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" },
+        { "day": "sunday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_14",
+      "name": "Nicolai",
+      "roles": ["lager"],
+      "max_hours_per_week": 20,
+      "max_hours_per_day": 6,
+      "availability": [
+        { "day": "friday", "start": "15:00", "end": "19:00" },
+        { "day": "saturday", "start": "07:00", "end": "19:00" },
+        { "day": "sunday", "start": "07:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_15",
+      "name": "Olivia",
+      "roles": ["have"],
+      "max_hours_per_week": 16,
+      "max_hours_per_day": 6,
+      "availability": [
+        { "day": "wednesday", "start": "15:00", "end": "19:00" },
+        { "day": "saturday", "start": "07:00", "end": "19:00" },
+        { "day": "sunday", "start": "07:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_16",
+      "name": "Patrick",
+      "roles": ["lukkeansvarlig", "lager"],
+      "max_hours_per_week": 32,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "friday", "start": "11:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" },
+        { "day": "sunday", "start": "11:00", "end": "19:00" },
+        { "day": "monday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_17",
+      "name": "Rikke",
+      "roles": ["kasse"],
+      "max_hours_per_week": 20,
+      "max_hours_per_day": 6,
+      "availability": [
+        { "day": "monday", "start": "15:00", "end": "19:00" },
+        { "day": "tuesday", "start": "15:00", "end": "19:00" },
+        { "day": "wednesday", "start": "15:00", "end": "19:00" },
+        { "day": "thursday", "start": "15:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_18",
+      "name": "Simon",
+      "roles": ["lager", "have"],
+      "max_hours_per_week": 36,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "07:00", "end": "15:00" },
+        { "day": "tuesday", "start": "07:00", "end": "15:00" },
+        { "day": "wednesday", "start": "07:00", "end": "15:00" },
+        { "day": "thursday", "start": "07:00", "end": "15:00" },
+        { "day": "friday", "start": "07:00", "end": "15:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_19",
+      "name": "Tina",
+      "roles": ["kasse"],
+      "max_hours_per_week": 28,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "tuesday", "start": "11:00", "end": "19:00" },
+        { "day": "wednesday", "start": "11:00", "end": "19:00" },
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "friday", "start": "11:00", "end": "19:00" },
+        { "day": "saturday", "start": "11:00", "end": "19:00" }
+      ]
+    },
+    {
+      "id": "emp_20",
+      "name": "Uffe",
+      "roles": ["lukkeansvarlig", "kasse"],
+      "max_hours_per_week": 36,
+      "max_hours_per_day": 8,
+      "availability": [
+        { "day": "monday", "start": "11:00", "end": "19:00" },
+        { "day": "tuesday", "start": "11:00", "end": "19:00" },
+        { "day": "wednesday", "start": "11:00", "end": "19:00" },
+        { "day": "thursday", "start": "11:00", "end": "19:00" },
+        { "day": "friday", "start": "11:00", "end": "19:00" },
+        { "day": "sunday", "start": "11:00", "end": "19:00" }
+      ]
+    }
+  ]
+}

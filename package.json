@@ -1,0 +1,22 @@
+{
+  "name": "vagtplan-system",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "wrangler pages dev",
+    "deploy": "npm run build && wrangler pages deploy frontend/dist",
+    "typecheck": "tsc --noEmit",
+    "seed:gen": "node db/build-seed.mjs",
+    "db:init:local": "wrangler d1 execute vagtplan-db --local --file=./db/schema.sql && wrangler d1 execute vagtplan-db --local --file=./db/seed.sql",
+    "db:init:remote": "wrangler d1 execute vagtplan-db --remote --file=./db/schema.sql && wrangler d1 execute vagtplan-db --remote --file=./db/seed.sql"
+  },
+  "dependencies": {
+    "hono": "^4.6.14"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.91.0"
+  }
+}

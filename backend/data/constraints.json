@@ -1,0 +1,94 @@
+{
+  "constraints": [
+    {
+      "id": "kasse_min_all",
+      "type": "min_employees",
+      "area": "kasse",
+      "description": "Mindst 4 medarbejdere i Kasse hele dagen",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "time_from": "07:00",
+      "time_to": "19:00",
+      "min_count": 4
+    },
+    {
+      "id": "bolig_min_day",
+      "type": "min_employees",
+      "area": "bolig",
+      "description": "Mindst 4 medarbejdere i Bolig kl. 07-15",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "time_from": "07:00",
+      "time_to": "15:00",
+      "min_count": 4
+    },
+    {
+      "id": "bolig_min_evening",
+      "type": "min_employees",
+      "area": "bolig",
+      "description": "Mindst 2 medarbejdere i Bolig efter kl. 15",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "time_from": "15:00",
+      "time_to": "19:00",
+      "min_count": 2
+    },
+    {
+      "id": "have_min_day",
+      "type": "min_employees",
+      "area": "have",
+      "description": "Mindst 4 medarbejdere i Have kl. 07-15",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "time_from": "07:00",
+      "time_to": "15:00",
+      "min_count": 4
+    },
+    {
+      "id": "have_min_evening",
+      "type": "min_employees",
+      "area": "have",
+      "description": "Mindst 2 medarbejdere i Have efter kl. 15",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "time_from": "15:00",
+      "time_to": "19:00",
+      "min_count": 2
+    }
+  ]
+}

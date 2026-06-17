@@ -1,0 +1,10 @@
+name = "vagtplan-system"
+compatibility_date = "2024-11-27"
+pages_build_output_dir = "frontend/dist"
+
+# D1-database (serverless SQLite).
+# database_id udfyldes efter `wrangler d1 create vagtplan-db` — se DEPLOYMENT.md.
+[[d1_databases]]
+binding = "DB"
+database_name = "vagtplan-db"
+database_id = "REPLACE_WITH_DATABASE_ID"

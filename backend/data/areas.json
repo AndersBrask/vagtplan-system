@@ -1,0 +1,32 @@
+{
+  "areas": [
+    {
+      "id": "kasse",
+      "name": "Kasse",
+      "roles": [
+        "kasse",
+        "lukkeansvarlig"
+      ],
+      "default_min_staff": 3,
+      "min_staff_rules": {}
+    },
+    {
+      "id": "bolig",
+      "name": "Bolig",
+      "roles": [
+        "lager"
+      ],
+      "default_min_staff": 3,
+      "min_staff_rules": {}
+    },
+    {
+      "id": "have",
+      "name": "Have",
+      "roles": [
+        "have"
+      ],
+      "default_min_staff": 1,
+      "min_staff_rules": {}
+    }
+  ]
+}
